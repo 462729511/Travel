@@ -1,5 +1,5 @@
 <template>
-  <div class="wraper">
+  <div class="wraper" >
     <swiper :options="swiperOption">
       <!-- slides -->
       <swiper-slide v-for="item of swiperList" :v-key="item.id">
@@ -20,7 +20,11 @@ export default {
     return{
       swiperOption:{
         pagination:'.swiper-pagination',
-        loop:true
+        clickable:true,
+        loop:true,
+        autoplay:{
+          stopOnLastSlide:true
+        }
       },
       swiperList:[
         {

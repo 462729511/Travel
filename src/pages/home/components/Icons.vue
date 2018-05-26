@@ -1,6 +1,6 @@
 <template>
 <div class="icons">
-  <swiper>
+  <swiper :options="swiperOption">
     <swiper-slide class="icons-swiper" v-for="(page,index) in pages" :key="index">
       <div class="icon" v-for="item in page">
         <img class="icon-img" :src="item.iconUrl" alt="">
@@ -14,8 +14,12 @@
 <script>
 export default {
   nameL:'Icons',
+
   data(){
     return{
+      swiperOption:{
+        pagination:'.swiper-pagination',
+      },
       iconList:[
         {
           id:'0',
@@ -60,7 +64,7 @@ export default {
         {
           id:'0',
           iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
+          iconText:'热门啊啊'
         },
       ]
     }
