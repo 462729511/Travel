@@ -2,7 +2,7 @@
   <div class="wraper">
     <swiper :options="swiperOption">
       <!-- slides -->
-      <swiper-slide v-for="item in swiperList">
+      <swiper-slide v-for="item of swiperList" :v-key="item.id">
         <img class="swiper-img" :src="item.imgUrl" alt="">
       </swiper-slide>
 
@@ -37,8 +37,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.wraper >>> .swiper-pagination-bullet-active
-  background-color #fff
+
   .wraper
     overflow hidden
     width: 100%

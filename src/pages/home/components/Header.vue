@@ -22,6 +22,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import "~styles/varibles.styl"
+
   .header
     height:.86rem
     display flex
