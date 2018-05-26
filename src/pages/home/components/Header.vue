@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <span class="iconfont">&#xe624;</span>
+      <span class="iconfont back-icon">&#xe624;</span>
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe65a;</span>
@@ -21,15 +21,20 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  @import "~styles/varibles.styl"
   .header
     height:.86rem
     display flex
     line-height .86rem
-    background:#00bcd4
+    background:$bgColor
     color: white
     .header-left
       width:.64rem
       float: left
+      .back-icon
+        display block
+        text-align center
+        font-size.4rem
     .header-input
       flex:1
       background-color #ffffff
