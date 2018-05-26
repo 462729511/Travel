@@ -1,19 +1,16 @@
 <template>
-  <swiper :options="swiperOption">
-    <!-- slides -->
-    <swiper-slide>I'm Slide 1</swiper-slide>
-    <swiper-slide>I'm Slide 2</swiper-slide>
-    <swiper-slide>I'm Slide 3</swiper-slide>
-    <swiper-slide>I'm Slide 4</swiper-slide>
-    <swiper-slide>I'm Slide 5</swiper-slide>
-    <swiper-slide>I'm Slide 6</swiper-slide>
-    <swiper-slide>I'm Slide 7</swiper-slide>
-    <!-- Optional controls -->
-    <div class="swiper-pagination"  slot="pagination"></div>
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
-    <div class="swiper-scrollbar"   slot="scrollbar"></div>
-  </swiper>
+  <div class="wraper">
+    <swiper :options="swiperOption">
+      <!-- slides -->
+      <swiper-slide v-for="item in swiperList">
+        <img class="swiper-img" :src="item.imgUrl" alt="">
+      </swiper-slide>
+
+      <!-- Optional controls -->
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
+  </div>
+
 </template>
 
 <script>
@@ -21,11 +18,32 @@ export default {
   name:'HomeSwiper',
   data:function () {
     return{
-      swiperOption:{}
+      swiperOption:{
+        pagination:'.swiper-pagination',
+        loop:true
+      },
+      swiperList:[
+        {
+        id:0,
+        imgUrl:'http://img1.qunarzz.com/piao/fusion/1805/e5/59fad13a64807d02.jpg_750x200_713ae984.jpg'
+      },
+        {
+          id:1,
+          imgUrl:'http://img1.qunarzz.com/piao/fusion/1805/77/f63bd04dd5319602.jpg_750x200_6ba8e0ca.jpg'
+        }
+      ]
     }
   }
 }
 </script>
 <style lang="stylus" scoped>
-
+.wraper >>> .swiper-pagination-bullet-active
+  background-color #fff
+  .wraper
+    overflow hidden
+    width: 100%
+    height:0
+    padding-bottom:31.25%
+    .swiper-img
+      width: 100%
 </style>
