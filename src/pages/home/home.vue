@@ -8,7 +8,7 @@
 import HomeHeader from './components/Header'
 export default {
     name:'home',
-    component:{
+    components:{
       HomeHeader
     }
 }
