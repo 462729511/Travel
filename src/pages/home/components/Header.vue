@@ -7,10 +7,12 @@
       <span class="iconfont">&#xe65a;</span>
       入城市/游玩/酒店
     </div>
-    <div class="header-right">
-      {{this.city}}
-      <span class="iconfont">&#xe6aa;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont">&#xe6aa;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -51,4 +53,5 @@ export default {
       float: right
       width:1.24rem
       text-align center
+      color: #fff
 </style>
