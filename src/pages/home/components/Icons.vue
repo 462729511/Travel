@@ -3,8 +3,8 @@
   <swiper :options="swiperOption">
     <swiper-slide class="icons-swiper" v-for="(page,index) in pages" :key="index">
       <div class="icon" v-for="item in page">
-        <img class="icon-img" :src="item.iconUrl" alt="">
-        <p class="icon-text">{{item.iconText}}</p>
+        <img class="icon-img" :src="item.imgUrl" alt="">
+        <p class="icon-text">{{item.desc}}</p>
       </div>
     </swiper-slide>
   </swiper>
@@ -14,65 +14,21 @@
 <script>
 export default {
   nameL:'Icons',
-
+  props:{
+    list:Array
+  },
   data(){
     return{
       swiperOption:{
         pagination:'.swiper-pagination',
       },
-      iconList:[
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点阿斯顿阿斯顿阿斯顿按时'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门景点'
-        },
-        {
-          id:'0',
-          iconUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          iconText:'热门啊啊'
-        },
-      ]
+
     }
   },
   computed:{
     pages (){
       const pages=[]
-      this.iconList.forEach((item,index)=>{
+      this.list.forEach((item,index)=>{
         const page=Math.floor(index/8)
         if(!pages[page]){
           pages[page]=[]
@@ -89,7 +45,8 @@ export default {
   .icons
     overflow: hidden
     height:0
-    padding-bottom 50%
+    padding-bottom 44%
+    margin-top .2rem
     .icons-swiper
       display flex
       flex-wrap wrap

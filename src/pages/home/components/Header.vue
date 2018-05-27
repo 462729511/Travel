@@ -8,7 +8,7 @@
       入城市/游玩/酒店
     </div>
     <div class="header-right">
-      城市
+      {{this.city}}
       <span class="iconfont">&#xe6aa;</span>
     </div>
   </div>
@@ -16,7 +16,10 @@
 
 <script>
 export default {
-  name:'HomeHeader'
+  name:'HomeHeader',
+  props:{
+    city:String
+  }
 }
 </script>
 

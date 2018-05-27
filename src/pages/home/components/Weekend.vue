@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item" v-for="item in recommendList">
+      <li class="item" v-for="item in list">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" alt="">
         </div>
@@ -19,25 +19,12 @@
 <script>
   export default {
     name:'HomeWeekend',
+    props:{
+      list:Array
+    },
     data () {
       return {
-        recommendList:[
-          {
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1804/c7/c74a66ec65491fc2a3.img.jpg_200x200_57fd010d.jpg',
-            title:'青岛东方影院万达',
-            desc:'啦啦啦啦啦啦啦啦啦啦'
-          },
-          {
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1804/c7/c74a66ec65491fc2a3.img.jpg_200x200_57fd010d.jpg',
-            title:'青岛东方影院万达',
-            desc:'啦啦啦啦啦啦啦啦啦啦'
-          },
-          {
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1804/c7/c74a66ec65491fc2a3.img.jpg_200x200_57fd010d.jpg',
-            title:'青岛东方影院万达',
-            desc:'啦啦啦啦啦啦啦啦啦啦'
-          }
-        ]
+
       }
     }
   }
