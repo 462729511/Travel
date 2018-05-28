@@ -12,36 +12,17 @@
     <div class="area">
       <div class="title border-topbottom">热门城市</div>
       <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-          <div class="button">北京</div>
-          <div class="button">北京</div>
-          <div class="button">北京</div>
-          <div class="button">北京</div>
-          <div class="button">北京</div>
-          <div class="button">北京</div>
-          <div class="button">北京啊啊啊啊啊啊啊</div>
+        <div class="button-wrapper" v-for="item in hot":key="item.id">
+          <div class="button">{{item.name}}</div>
         </div>
       </div>
     </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
+    <div class="area"  v-for="(item,key) in cities" :key="key">
+      <div class="title border-topbottom">{{key}}</div>
       <div class="item-list">
-        <div class="item border-bottom">
-          <div class="item">北京</div>
-          <div class="item">北京</div>
-          <div class="item">北京</div>
-          <div class="item">北京</div>
-          <div class="item">北京</div>
-          <div class="item">北京</div>
-          <div class="item">北京</div>
-          <div class="item">北京啊啊啊啊啊啊啊</div>
-          <div class="item">北京啊啊啊啊啊啊啊</div>
-          <div class="item">北京啊啊啊啊啊啊啊</div>
-          <div class="item">北京啊啊啊啊啊啊啊</div>
-          <div class="item">北京啊啊啊啊啊啊啊</div>
-          <div class="item">北京啊啊啊啊啊啊啊</div>
-          <div class="item">北京啊啊啊啊啊啊啊</div>
+        <div class="item border-bottom" v-for="innerItem in item" :key="innerItem.id">
+          <div class="item">{{innerItem.name}}</div>
+
         </div>
       </div>
     </div>
@@ -53,6 +34,15 @@
 import BScroll from 'better-scroll'
 export default {
   name:'CityList',
+  props:{
+    hot:Array,
+    cities:Object,
+    letter:String
+  },
+  data () {
+    return {
+    }
+  },
   mounted () {
     this.scroll=new BScroll(this.$refs.wrapper)
   }
