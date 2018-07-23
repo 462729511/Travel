@@ -1,7 +1,7 @@
 <template>
   <div>
       <home-header></home-header>
-      <home-swiper :list="swiperList"></home-swiper>
+      <home-swiper v-bind:list="swiperList"></home-swiper>
     <icons :list="iconList"></icons>
     <home-recommend :list="recommendList"></home-recommend>
     <home-weekend :list="weekendList"></home-weekend>
